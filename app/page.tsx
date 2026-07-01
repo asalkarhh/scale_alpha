@@ -385,7 +385,7 @@ export default function Home() {
               </ScrollReveal>
             ))}
           </div>
-
+              {/* Sumit Asalkar */}
           <div className="mt-12 flex flex-col gap-4 rounded-[32px] border border-slate-200/70 bg-slate-950 p-6 text-white shadow-[0_25px_80px_rgba(2,6,23,0.28)] md:flex-row md:items-center md:justify-between">
             <div>
               <p className="text-xs uppercase tracking-[0.24em] text-sky-100/70">
