@@ -1,7 +1,9 @@
-import yahooFinance from "yahoo-finance2";
+import YahooFinance from "yahoo-finance2";
 import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
+
+const yahooFinance = new YahooFinance();
 
 export async function GET() {
   try {
@@ -57,7 +59,7 @@ export async function GET() {
     return NextResponse.json(
       marketData
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error(
       "Market API Fatal Error:",
       error
@@ -66,8 +68,9 @@ export async function GET() {
     return NextResponse.json(
       {
         error:
-          error?.message ||
-          "Unknown error",
+          error instanceof Error
+            ? error.message
+            : "Unknown error",
       },
       { status: 500 }
     );

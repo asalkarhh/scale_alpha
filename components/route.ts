@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
-import * as yahooFinance from "yahoo-finance2";
+import YahooFinance from "yahoo-finance2";
 
 export const dynamic = "force-dynamic"; // Ensures live data fetching
+
+const yahooFinance = new YahooFinance();
 
 const TICKERS = [
   { symbol: "^NSEI", label: "NIFTY 50" },
@@ -27,9 +29,12 @@ export async function GET() {
 
         let sparkline: number[] = [];
         try {
-          const chart = await yahooFinance.chart(t.symbol, { interval: "5m", range: "1d" });
+          const chart = await yahooFinance.chart(t.symbol, {
+            period1: Date.now() - 24 * 60 * 60 * 1000,
+            interval: "5m",
+          });
           sparkline = chart.quotes.map((q) => q.close).filter((val): val is number => val !== null && val !== undefined);
-        } catch (err) {
+        } catch {
           // Fail silently for sparkline to preserve the main quote
         }
 
