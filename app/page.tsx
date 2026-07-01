@@ -1,4 +1,6 @@
 import Link from "next/link";
+import MarketLive from "@/components/MarketLive";
+
 import {
   ArrowUpRight,
   BadgeCheck,
@@ -13,7 +15,6 @@ import { ContactGrid } from "@/components/contact-grid";
 import { FAQAccordion } from "@/components/faq-accordion";
 import { FinancialHealthScore } from "@/components/financial-health-score";
 import { HeroVisual } from "@/components/hero-visual";
-import { MarketLive } from "@/components/market-live";
 import { ParticleField } from "@/components/particle-field";
 import { PortfolioReviewForm } from "@/components/portfolio-review-form";
 import { ScrollReveal } from "@/components/scroll-reveal";

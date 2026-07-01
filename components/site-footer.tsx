@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { siteConfig } from "@/lib/site-data";
@@ -9,9 +10,14 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[1.1fr_0.8fr_0.8fr_0.9fr]">
         <div className="space-y-4">
           <div className="flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#1f5eff_0%,#35c4ff_48%,#4dd4a3_100%)] text-lg font-bold text-white">
-              SA
-            </span>
+            <Image
+              src="/logo.png"
+              alt="Scale Alpha Investments and Insurance"
+              width={64}
+              height={96}
+              sizes="64px"
+              className="h-24 w-auto rounded-xl object-contain shadow-[0_16px_40px_rgba(2,6,23,0.4)]"
+            />
             <div>
               <p className="font-display text-xl text-white">Scale Alpha</p>
               <p className="text-xs uppercase tracking-[0.25em] text-slate-500">

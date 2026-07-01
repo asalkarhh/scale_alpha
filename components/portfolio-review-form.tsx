@@ -110,6 +110,7 @@ export function PortfolioReviewForm() {
       </div>
 
       <form
+        suppressHydrationWarning
         onSubmit={handleSubmit}
         className="rounded-[32px] border border-slate-200/70 bg-white p-6 shadow-[0_18px_60px_rgba(15,23,42,0.08)]"
       >
@@ -195,6 +196,7 @@ export function PortfolioReviewForm() {
 
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
           <button
+            suppressHydrationWarning
             type="submit"
             className="inline-flex items-center justify-center rounded-full bg-[linear-gradient(135deg,#1f5eff_0%,#35c4ff_48%,#4dd4a3_100%)] px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_45px_rgba(36,111,255,0.24)] transition-transform duration-300 hover:-translate-y-0.5"
           >
@@ -218,4 +220,3 @@ export function PortfolioReviewForm() {
     </div>
   );
 }
-

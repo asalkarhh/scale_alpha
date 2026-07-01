@@ -1,6 +1,7 @@
 "use client";
 
 import { startTransition, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -18,9 +19,15 @@ export function SiteHeader() {
       <div className="mx-auto max-w-7xl rounded-full border border-white/12 bg-slate-950/70 px-4 py-3 shadow-[0_20px_60px_rgba(2,6,23,0.35)] backdrop-blur-2xl supports-[backdrop-filter]:bg-slate-950/55">
         <div className="flex items-center justify-between gap-3">
           <Link href="/" className="flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#1f5eff_0%,#35c4ff_48%,#4dd4a3_100%)] text-lg font-bold text-white shadow-[0_12px_30px_rgba(36,111,255,0.32)]">
-              SA
-            </span>
+            <Image
+              src="/logo.png"
+              alt="Scale Alpha Investments and Insurance"
+              width={35}
+              height={52}
+              priority
+              sizes="35px"
+              className="h-[52px] w-auto rounded-lg object-contain shadow-[0_12px_30px_rgba(36,111,255,0.24)]"
+            />
             <div>
               <p className="font-display text-lg text-white">Scale Alpha</p>
               <p className="text-[11px] uppercase tracking-[0.24em] text-slate-400">
