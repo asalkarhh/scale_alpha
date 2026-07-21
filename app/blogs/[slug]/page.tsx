@@ -17,7 +17,7 @@ export async function generateMetadata({
   params,
 }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = blogPosts.find((item) => item.slug === slug);
+  const post = blogPosts.find((item) => item.slug === slug)!;
 
   if (!post) {
     return {
@@ -32,8 +32,9 @@ export async function generateMetadata({
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  notFound();
   const { slug } = await params;
-  const post = blogPosts.find((item) => item.slug === slug);
+  const post = blogPosts.find((item) => item.slug === slug)!;
 
   if (!post) {
     notFound();

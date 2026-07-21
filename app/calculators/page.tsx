@@ -5,9 +5,25 @@ import { PageHero } from "@/components/page-hero";
 import { ScrollReveal } from "@/components/scroll-reveal";
 
 export const metadata: Metadata = {
-  title: "Calculators",
+  title: "SIP & Financial Planning Calculators",
   description:
-    "Interactive SIP, SWP, lumpsum, EMI, retirement, child education, inflation, and insurance planning calculators.",
+    "Use free SIP, SWP, lumpsum, EMI, retirement, child education, inflation and insurance planning calculators from Scale Alpha.",
+  keywords: [
+    "Scale Alpha calculators",
+    "SIP calculator India",
+    "insurance need calculator",
+    "retirement calculator India",
+    "lumpsum calculator",
+    "SWP calculator",
+    "financial health score",
+  ],
+  alternates: { canonical: "/calculators" },
+  openGraph: {
+    title: "SIP & Financial Planning Calculators | Scale Alpha",
+    description:
+      "Free interactive calculators for SIPs, investments, retirement, insurance needs and financial planning.",
+    url: "/calculators",
+  },
 };
 
 export default function CalculatorsPage() {
@@ -16,8 +32,8 @@ export default function CalculatorsPage() {
       <PageHero
         eyebrow="Calculators"
         title="Investor-friendly calculators with a premium dashboard experience."
-        description="Use these tools for first-level financial planning, then convert the output into a tailored advisory roadmap with Scale Alpha."
-        primaryCta={{ label: "Book a Review", href: "/#portfolio-review" }}
+        description="Use these tools for first-level financial planning, then convert the output into a tailored planning roadmap with Scale Alpha."
+        primaryCta={{ label: "Contact Us", href: "/contact" }}
         secondaryCta={{ label: "Back to Home", href: "/" }}
       />
       <section className="bg-white px-6 py-20">

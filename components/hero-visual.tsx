@@ -25,7 +25,7 @@ export function HeroVisual() {
             <div className="mb-6 flex items-start justify-between">
               <div>
                 <p className="text-xs uppercase tracking-[0.26em] text-sky-100/70">
-                  Advisory dashboard
+                  Planning dashboard
                 </p>
                 <h3 className="mt-3 text-xl font-semibold text-white">
                   Goal-linked growth plan
@@ -103,7 +103,7 @@ export function HeroVisual() {
               </p>
               <p className="mt-3 text-3xl font-semibold text-white">+14.6%</p>
               <p className="mt-2 text-sm leading-6 text-slate-300">
-                Advisory-led allocation with disciplined SIPs, tax-aware rebalancing,
+                Planning-led allocation with disciplined SIPs, tax-aware rebalancing,
                 and downside-conscious planning.
               </p>
             </motion.div>

@@ -5,8 +5,6 @@ import {
   BarChart3,
   BriefcaseBusiness,
   Building2,
-  CandlestickChart,
-  ChartColumnIncreasing,
   CircleDollarSign,
   FileBadge2,
   Gem,
@@ -80,93 +78,64 @@ export type MarketQuote = {
 };
 
 const whatsappNumber =
-  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "919999999999";
+  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "919403395768";
 const contactEmail =
-  process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "advisor@scalealpha.in";
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "scalealpha.invest@gmail.com";
 const consultationEmail =
   process.env.NEXT_PUBLIC_CONSULTATION_EMAIL ?? contactEmail;
 const officeAddress =
   process.env.NEXT_PUBLIC_OFFICE_ADDRESS ??
-  "Bandra Kurla Complex, Mumbai, Maharashtra";
+  "B-26/1, Tiger Gate, Kendriya Vihar, Kharghar, Navi Mumbai, Maharashtra 410210";
 const officeLabel =
-  process.env.NEXT_PUBLIC_OFFICE_LABEL ?? "By-appointment advisory desk";
-const sebiRegistration =
-  process.env.NEXT_PUBLIC_SEBI_REGISTRATION ??
-  "SEBI registration number to be added before go-live";
+  process.env.NEXT_PUBLIC_OFFICE_LABEL ?? "Scale Alpha Office";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scalealpha.in";
 
 export const siteConfig = {
   name: "Scale Alpha",
+  contactName: "Kaushal Balte",
   tagline: "Smart Financial Planning for a Secure Future",
   description:
-    "SEBI Registered Financial Advisor helping individuals and families grow wealth through Mutual Funds, SIPs, Insurance and Financial Planning.",
+    "Scale Alpha, led by Kaushal Balte, is an AMFI-Registered Mutual Fund Distributor offering mutual funds, SIP planning, insurance and goal-based financial planning in India.",
   longDescription:
-    "Scale Alpha is a premium wealth advisory frontend crafted to convert trust into consultations with a modern fintech aesthetic, clear compliance cues, and interactive planning tools.",
+    "Scale Alpha is a premium mutual fund distribution and financial planning platform crafted to convert trust into consultations with a modern fintech aesthetic, clear compliance cues, and interactive planning tools.",
   whatsappNumber,
   contactEmail,
   consultationEmail,
   officeAddress,
   officeLabel,
-  sebiRegistration,
+  amfiArn: "ARN-269246",
   siteUrl,
-  mapEmbedUrl:
-    process.env.NEXT_PUBLIC_MAP_EMBED_URL ??
-    "https://www.google.com/maps?q=Bandra%20Kurla%20Complex%20Mumbai&output=embed",
   socialLinks: [
-    { label: "LinkedIn", href: "https://www.linkedin.com" },
-    { label: "Instagram", href: "https://www.instagram.com" },
-    { label: "YouTube", href: "https://www.youtube.com" },
-    { label: "X", href: "https://x.com" },
+    {
+      label: "Instagram",
+      href: "https://www.instagram.com/scale.alpha/",
+    },
+    {
+      label: "YouTube",
+      href: "https://www.youtube.com/@scale-alpha",
+    },
   ],
   navItems: [
-    { label: "Home", href: "/" },
+    { label: "Home", href: "/#home" },
     { label: "Services", href: "/services" },
     { label: "Calculators", href: "/calculators" },
     { label: "Testimonials", href: "/#testimonials" },
-    { label: "Blogs", href: "/blogs" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ] satisfies NavItem[],
 };
 
-export const heroMetrics: Metric[] = [
-  {
-    value: 100,
-    suffix: "+",
-    label: "Happy Clients",
-    detail: "Across salaried professionals, founders, and families.",
-  },
-  {
-    value: 25,
-    prefix: "₹",
-    suffix: " Cr+",
-    label: "Assets Guided",
-    detail: "Structured for disciplined long-term growth journeys.",
-  },
-  {
-    value: 12,
-    suffix: "+",
-    label: "Years Experience",
-    detail: "Combining advisory discipline with planning-first execution.",
-  },
-  {
-    value: 1,
-    label: "SEBI Registered",
-    detail: "Compliance-led communication, disclosure, and process design.",
-  },
-];
-
 export const trustPillars: IconCard[] = [
   {
     eyebrow: "Regulated trust",
-    title: "SEBI Registered Advisory",
+    title: "AMFI-Registered Mutual Fund Distributor",
     description:
       "Every client journey is anchored in compliance, suitability, and transparent communication.",
     icon: FileBadge2,
   },
   {
     eyebrow: "Clear process",
-    title: "Transparent Advisory",
+    title: "Transparent Distribution",
     description:
       "We structure recommendations around goals, risk tolerance, timelines, and full visibility into the plan.",
     icon: ShieldCheck,
@@ -175,7 +144,7 @@ export const trustPillars: IconCard[] = [
     eyebrow: "Tailored planning",
     title: "Personalized Planning",
     description:
-      "No generic product pushes. Portfolios are aligned to income profile, liquidity needs, and life stage.",
+      "Portfolios are aligned to income profile, liquidity needs, and life stage.",
     icon: Target,
   },
   {
@@ -189,28 +158,12 @@ export const trustPillars: IconCard[] = [
 
 export const serviceCards: ServiceCard[] = [
   {
-    title: "Mutual Fund Advisory",
-    description:
-      "Portfolio construction across equity, debt, and hybrid funds for goal-based compounding.",
-    icon: ChartColumnIncreasing,
-    cta: "Explore Strategy",
-    href: "/services#mutual-fund-advisory",
-  },
-  {
     title: "SIP Planning",
     description:
       "Build systematic investment plans aligned to cash flow, target corpus, and market cycles.",
     icon: PiggyBank,
     cta: "Plan My SIP",
     href: "/services#sip-planning",
-  },
-  {
-    title: "Stock Market Guidance",
-    description:
-      "High-conviction framework guidance for investors who want structure instead of speculation.",
-    icon: CandlestickChart,
-    cta: "Understand Risk",
-    href: "/services#stock-market-guidance",
   },
   {
     title: "Health Insurance",
@@ -263,7 +216,7 @@ export const serviceCards: ServiceCard[] = [
   {
     title: "Wealth Management",
     description:
-      "Integrated advisory covering investments, insurance, liquidity, and long-term strategy.",
+      "Integrated planning covering investments, insurance, liquidity, and long-term strategy.",
     icon: Gem,
     cta: "Book a Review",
     href: "/services#wealth-management",
@@ -284,9 +237,9 @@ export const whyChooseUs: IconCard[] = [
     icon: Target,
   },
   {
-    title: "Trusted Advisory",
+    title: "Trusted Distribution",
     description:
-      "Relationship-first advisory designed to feel more like a long-term CFO than a product intermediary.",
+      "Relationship-first support designed around long-term goals and disciplined implementation.",
     icon: BadgeCheck,
   },
   {
@@ -309,34 +262,6 @@ export const whyChooseUs: IconCard[] = [
   },
 ];
 
-export const successMetrics: Metric[] = [
-  {
-    value: 100,
-    suffix: "+",
-    label: "Clients",
-    detail: "A focused practice built on long-term retention and referrals.",
-  },
-  {
-    value: 25,
-    prefix: "₹",
-    suffix: " Cr+",
-    label: "Managed",
-    detail: "Illustrative guided assets showcase scale without compromising advice quality.",
-  },
-  {
-    value: 12,
-    suffix: "+",
-    label: "Years Experience",
-    detail: "Market cycles navigated with planning-led discipline.",
-  },
-  {
-    value: 95,
-    suffix: "%",
-    label: "Client Satisfaction",
-    detail: "Built around clarity, responsiveness, and goal alignment.",
-  },
-];
-
 export const testimonials: Testimonial[] = [
   {
     name: "Riya Mehta",
@@ -353,7 +278,7 @@ export const testimonials: Testimonial[] = [
     role: "Startup Founder",
     result: "Rebalanced risk and created a founder-friendly protection stack",
     quote:
-      "What stood out was the strategic thinking. It felt like working with a premium advisory desk, not a product sales funnel.",
+      "What stood out was the strategic thinking. It felt like working with a premium financial planning desk.",
     rating: 5,
     initials: "AK",
     location: "Delhi NCR",
@@ -373,7 +298,7 @@ export const testimonials: Testimonial[] = [
     role: "Finance Professional",
     result: "Optimized tax-saving investments and long-term allocation",
     quote:
-      "Strong advisory, clean communication, and a premium experience from first call to review cadence.",
+      "Strong planning support, clean communication, and a premium experience from first call to review cadence.",
     rating: 5,
     initials: "VI",
     location: "Mumbai",
@@ -393,7 +318,7 @@ export const blogPosts: BlogPost[] = [
     body: [
       "SIPs work best when they are attached to a time horizon instead of a market mood. If your goal is years away, temporary corrections are part of the journey rather than a reason to stop.",
       "Investors often underestimate the value of simply staying invested through periods of uncertainty. Consistency can matter more than trying to time entries perfectly.",
-      "A premium advisory process adds value by matching contribution amounts, asset mix, and review frequency to the investor's actual life goals.",
+      "A structured distribution process supports investors by matching contribution amounts, asset mix, and review frequency to their actual life goals.",
     ],
   },
   {
@@ -453,7 +378,7 @@ export const blogPosts: BlogPost[] = [
     body: [
       "Mutual funds pool investor capital into diversified portfolios managed under a stated mandate. The real question is not just what a fund is, but when it belongs in your plan.",
       "Different categories solve different problems. Equity funds target long-term growth, debt funds improve stability, and hybrid funds balance the two.",
-      "Advisory value comes from allocation, review discipline, and knowing what not to buy as much as what to include.",
+      "Distribution support includes allocation, review discipline, and product selection aligned with the investor's goals.",
     ],
   },
 ];
@@ -484,7 +409,7 @@ export const faqs = [
   {
     question: "What kind of returns should investors expect?",
     answer:
-      "Returns depend on asset class, time horizon, and market conditions. A credible advisory process frames expectations around suitability, not promises or fixed outcomes.",
+      "Returns depend on asset class, time horizon, and market conditions. A credible planning process frames expectations around suitability, not promises or fixed outcomes.",
   },
   {
     question: "How often should a financial plan be reviewed?",
@@ -498,7 +423,7 @@ export const faqs = [
   },
 ];
 
-export const advisoryProcess: IconCard[] = [
+export const planningProcess: IconCard[] = [
   {
     title: "Discovery",
     description:
@@ -533,13 +458,13 @@ export const contactCards: IconCard[] = [
     icon: CircleDollarSign,
   },
   {
-    title: "Email Advisory Desk",
+    title: "Email Planning Desk",
     description:
       "Send your queries, current holdings, or meeting preferences for a detailed response.",
     icon: FileBadge2,
   },
   {
-    title: "Advisory Office",
+    title: "Distribution Office",
     description:
       "Pan-India service with consultation-led meetings and structured follow-up.",
     icon: Building2,

@@ -30,7 +30,7 @@ export function ServicesGrid({ detailed = false }: ServicesGridProps) {
               </p>
               {detailed ? (
                 <div className="mt-5 rounded-2xl border border-slate-100 bg-slate-50/80 p-4 text-sm leading-7 text-slate-600">
-                  Advisory conversations in this area typically cover suitability,
+                  Planning conversations in this area typically cover suitability,
                   allocation logic, implementation steps, and review cadence.
                 </div>
               ) : null}

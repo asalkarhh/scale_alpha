@@ -1,8 +1,11 @@
-@import "tailwindcss";
+@import "tailwindcss" source(none);
+@source "../app";
+@source "../components/*.tsx";
+@source "../components/ui/*.tsx";
 
 :root {
   --background: #ffffff;
-  --foreground: #07111f;
+  --foreground: #052e24;
   --muted: #64748b;
   --card: rgba(255, 255, 255, 0.85);
 }
@@ -21,15 +24,15 @@ html {
 body {
   min-height: 100%;
   background:
-    radial-gradient(circle at top, rgba(53, 196, 255, 0.08), transparent 25%),
-    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    radial-gradient(circle at top, rgba(16, 185, 129, 0.08), transparent 25%),
+    linear-gradient(180deg, #ffffff 0%, #f7fdf9 100%);
   color: var(--foreground);
   font-family: var(--font-manrope), sans-serif;
 }
 
 ::selection {
-  background: rgba(31, 94, 255, 0.18);
-  color: #07111f;
+  background: rgba(16, 185, 129, 0.2);
+  color: #052e24;
 }
 
 .font-display {
@@ -51,7 +54,7 @@ body {
   appearance: none;
   height: 0.6rem;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(31, 94, 255, 0.82), rgba(77, 212, 163, 0.9));
+  background: linear-gradient(90deg, rgba(5, 150, 105, 0.9), rgba(52, 211, 153, 0.9));
   outline: none;
 }
 
@@ -61,8 +64,8 @@ body {
   height: 1.25rem;
   border-radius: 999px;
   background: #ffffff;
-  border: 3px solid #1f5eff;
-  box-shadow: 0 10px 30px rgba(31, 94, 255, 0.28);
+  border: 3px solid #059669;
+  box-shadow: 0 10px 30px rgba(5, 150, 105, 0.22);
 }
 
 .fin-slider::-moz-range-thumb {
@@ -70,14 +73,31 @@ body {
   height: 1.25rem;
   border-radius: 999px;
   background: #ffffff;
-  border: 3px solid #1f5eff;
-  box-shadow: 0 10px 30px rgba(31, 94, 255, 0.28);
+  border: 3px solid #059669;
+  box-shadow: 0 10px 30px rgba(5, 150, 105, 0.22);
 }
 
 .score-ring {
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.8),
     0 24px 50px rgba(15, 23, 42, 0.08);
+}
+
+.header-premium-enter {
+  animation: header-enter 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.premium-cta-glow {
+  animation: premium-glow 3s ease-in-out infinite;
+}
+
+.header-static-button:hover {
+  transform: none;
+}
+
+.footer-shimmer {
+  background-size: 200% 100%;
+  animation: footer-shimmer 4s ease-in-out infinite;
 }
 
 @keyframes drift {
@@ -101,13 +121,47 @@ body {
   }
 }
 
+@keyframes header-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes premium-glow {
+  0%,
+  100% {
+    box-shadow: 0 18px 45px rgba(5, 150, 105, 0.22);
+  }
+  50% {
+    box-shadow: 0 20px 52px rgba(52, 211, 153, 0.42);
+  }
+}
+
+@keyframes footer-shimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
   .particle,
-  .ticker-track {
+  .ticker-track,
+  .header-premium-enter,
+  .premium-cta-glow,
+  .footer-shimmer {
     animation: none;
   }
 }

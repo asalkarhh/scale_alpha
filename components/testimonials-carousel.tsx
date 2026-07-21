@@ -76,7 +76,7 @@ export function TestimonialsCarousel() {
       <div className="grid gap-4">
         <div className="rounded-[32px] border border-white/10 bg-slate-950 p-6 text-white shadow-[0_30px_100px_rgba(2,6,23,0.36)]">
           <p className="text-xs uppercase tracking-[0.22em] text-sky-100/70">
-            Video testimonial placeholder
+            Client perspectives
           </p>
           <div className="mt-5 flex aspect-[16/10] items-center justify-center rounded-[26px] border border-white/10 bg-[linear-gradient(135deg,rgba(31,94,255,0.22)_0%,rgba(77,212,163,0.18)_100%)]">
             <button
@@ -87,8 +87,8 @@ export function TestimonialsCarousel() {
             </button>
           </div>
           <p className="mt-4 text-sm leading-7 text-slate-300">
-            Designed for future client video integrations, founder walkthroughs, or
-            portfolio education explainers.
+            Hear how clear planning, disciplined investing, and ongoing support can
+            help clients move toward their financial goals with confidence.
           </p>
         </div>
 

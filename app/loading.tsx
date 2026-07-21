@@ -9,7 +9,7 @@ export default function Loading() {
           <p className="text-xs uppercase tracking-[0.28em] text-sky-100/70">
             Scale Alpha
           </p>
-          <h2 className="mt-3 text-2xl font-semibold">Loading premium advisory experience</h2>
+          <h2 className="mt-3 text-2xl font-semibold">Loading premium planning experience</h2>
         </div>
         <div className="flex gap-2">
           {[0, 1, 2].map((item) => (

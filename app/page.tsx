@@ -8,25 +8,19 @@ import {
   Shield,
 } from "lucide-react";
 
-import { AnimatedCounter } from "@/components/animated-counter";
-import { BlogFilter } from "@/components/blog-filter";
 import { CalculatorSuite } from "@/components/calculator-suite";
 import { ContactGrid } from "@/components/contact-grid";
 import { FAQAccordion } from "@/components/faq-accordion";
 import { FinancialHealthScore } from "@/components/financial-health-score";
 import { HeroVisual } from "@/components/hero-visual";
 import { ParticleField } from "@/components/particle-field";
-import { PortfolioReviewForm } from "@/components/portfolio-review-form";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { ServicesGrid } from "@/components/services-grid";
 import { TestimonialsCarousel } from "@/components/testimonials-carousel";
 import { ButtonLink } from "@/components/ui/button-link";
 import { SectionHeading } from "@/components/ui/section-heading";
 import {
-  advisoryProcess,
-  heroMetrics,
   siteConfig,
-  successMetrics,
   trustPillars,
   whyChooseUs,
 } from "@/lib/site-data";
@@ -34,24 +28,27 @@ import {
 export default function Home() {
   return (
     <>
-      <section className="relative overflow-hidden px-6 pb-20 pt-10 sm:pt-16">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(53,196,255,0.22),transparent_28%),radial-gradient(circle_at_80%_20%,rgba(77,212,163,0.18),transparent_20%),linear-gradient(180deg,#06111f_0%,#081323_58%,#0b1727_100%)]" />
-        <ParticleField variant="dark" />
+      <section
+        id="home"
+        className="relative scroll-mt-24 overflow-hidden px-6 pb-20 pt-10 sm:pt-16"
+      >
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.13),transparent_32%),linear-gradient(180deg,#ffffff_0%,#f3fbf6_100%)]" />
+        <ParticleField variant="light" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.02fr_0.98fr]">
           <div className="pt-8">
             <ScrollReveal>
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.26em] text-sky-100">
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.26em] text-emerald-800">
                 <BadgeCheck className="h-4 w-4" />
-                SEBI Registered Advisory Experience
+                AMFI-Registered Mutual Fund Distributor
               </span>
             </ScrollReveal>
             <ScrollReveal delay={0.08}>
-              <h1 className="mt-6 max-w-4xl text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
+              <h1 className="mt-6 max-w-4xl text-5xl font-semibold tracking-tight text-emerald-950 sm:text-6xl lg:text-7xl">
                 Smart Financial Planning for a Secure Future
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={0.14}>
-              <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+              <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
                 {siteConfig.description}
               </p>
             </ScrollReveal>
@@ -68,34 +65,6 @@ export default function Home() {
                 </ButtonLink>
               </div>
             </ScrollReveal>
-
-            <div className="mt-12 grid gap-4 sm:grid-cols-2">
-              {heroMetrics.map((metric, index) => (
-                <ScrollReveal
-                  key={metric.label}
-                  delay={0.24 + index * 0.05}
-                  className="rounded-[28px] border border-white/10 bg-white/6 p-5 backdrop-blur-2xl"
-                >
-                  <p className="text-3xl font-semibold text-white">
-                    {metric.label === "SEBI Registered" ? (
-                      metric.label
-                    ) : (
-                      <AnimatedCounter
-                        value={metric.value}
-                        prefix={metric.prefix}
-                        suffix={metric.suffix}
-                      />
-                    )}
-                  </p>
-                  <p className="mt-3 text-sm font-medium text-slate-200">
-                    {metric.label}
-                  </p>
-                  <p className="mt-2 text-sm leading-7 text-slate-400">
-                    {metric.detail}
-                  </p>
-                </ScrollReveal>
-              ))}
-            </div>
           </div>
 
           <ScrollReveal delay={0.16}>
@@ -104,13 +73,32 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="border-y border-emerald-100 bg-white px-6 py-12" id="achievements">
+        <div className="mx-auto grid max-w-7xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { value: "100+", label: "Happy Clients" },
+            { value: "₹5 Cr+", label: "Assets Under Management" },
+            { value: "4 yrs+", label: "Years of Experience" },
+            { value: "100%", label: "Client Satisfaction" },
+          ].map((metric) => (
+            <div
+              key={metric.label}
+              className="rounded-[24px] border border-emerald-100 bg-emerald-50/50 p-6 text-center"
+            >
+              <p className="text-3xl font-semibold text-emerald-950">{metric.value}</p>
+              <p className="mt-2 text-sm font-medium text-slate-600">{metric.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="relative overflow-hidden px-6 py-20" id="trust">
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,#0b1523_0%,#0d1727_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,#064e3b_0%,#052e24_100%)]" />
         <div className="relative mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="Authority & trust"
             title="Designed to look credible because it is built around clarity, compliance, and disciplined planning."
-            description="Scale Alpha balances premium UI with the cues serious investors expect: transparent process, risk-aware communication, and advisory-first positioning."
+            description="Scale Alpha balances premium UI with the cues serious investors expect: transparent process, risk-aware communication, and planning-first positioning."
             invert
           />
 
@@ -146,7 +134,7 @@ export default function Home() {
                     "Suitability-led planning approach",
                     "Document-ready review structure",
                     "Transparent risk positioning",
-                    "Long-term advisory relationship",
+                    "Long-term planning relationship",
                   ].map((item) => (
                     <div
                       key={item}
@@ -169,7 +157,7 @@ export default function Home() {
                 </div>
                 <div className="mt-6 space-y-3">
                   {[
-                    "SEBI Registered Advisory Positioning",
+                    "AMFI-Registered Distribution Base",
                     "Transparent Planning Framework",
                     "Goal-based portfolio design",
                   ].map((item) => (
@@ -206,7 +194,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Calculators"
             title="Premium planning calculators that feel like a fintech dashboard, not a static lead form."
-            description="Each tool includes animated sliders, responsive charts, real-time calculation logic, and clear takeaways that naturally lead into advisory conversations."
+            description="Each tool includes animated sliders, responsive charts, real-time calculation logic, and clear takeaways that naturally lead into planning conversations."
           />
           <div className="mt-12">
             <CalculatorSuite />
@@ -228,7 +216,7 @@ export default function Home() {
       </section>
 
       <section className="relative overflow-hidden px-6 py-20" id="market-live">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(53,196,255,0.18),transparent_22%),linear-gradient(180deg,#06111f_0%,#081323_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(52,211,153,0.18),transparent_22%),linear-gradient(180deg,#064e3b_0%,#052e24_100%)]" />
         <div className="relative mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="Market live section"
@@ -246,7 +234,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             eyebrow="Why choose us"
-            title="Strategic wealth advisory, framed with premium clarity."
+            title="Strategic wealth planning, framed with premium clarity."
             description="These feature blocks reinforce the brand promise: long-term partnership, personalized planning, and goal-based execution."
             align="center"
           />
@@ -275,72 +263,10 @@ export default function Home() {
           <SectionHeading
             eyebrow="Testimonials"
             title="Social proof presented in a refined, high-trust format."
-            description="The carousel, story cards, and video placeholders are designed to support future client onboarding and reputation building."
+            description="Client stories highlight the value of clear planning, disciplined investing, and consistent support."
           />
           <div className="mt-12">
             <TestimonialsCarousel />
-          </div>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden px-6 py-18">
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,#07111d_0%,#0d1d31_55%,#081323_100%)]" />
-        <div className="relative mx-auto max-w-7xl">
-          <SectionHeading
-            eyebrow="Success metrics"
-            title="The numbers are designed to build confidence at a glance."
-            description="Animated counters create energy while reinforcing the authority and scale expected from a premium advisory brand."
-            invert
-            align="center"
-          />
-          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {successMetrics.map((metric, index) => (
-              <ScrollReveal key={metric.label} delay={index * 0.05}>
-                <div className="rounded-[30px] border border-white/10 bg-white/6 p-6 text-white backdrop-blur-2xl">
-                  <p className="text-4xl font-semibold">
-                    <AnimatedCounter
-                      value={metric.value}
-                      prefix={metric.prefix}
-                      suffix={metric.suffix}
-                    />
-                  </p>
-                  <p className="mt-4 text-base font-medium text-slate-200">
-                    {metric.label}
-                  </p>
-                  <p className="mt-2 text-sm leading-7 text-slate-400">
-                    {metric.detail}
-                  </p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-6 py-20" id="blogs">
-        <div className="mx-auto max-w-7xl">
-          <SectionHeading
-            eyebrow="Knowledge center"
-            title="Modern editorial cards and category filters that position Scale Alpha as a thinking partner."
-            description="The blog layout is tuned for SEO, investor education, and future publishing workflows."
-          />
-          <div className="mt-12">
-            <BlogFilter />
-          </div>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden px-6 py-20" id="portfolio-review">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(53,196,255,0.18),transparent_26%),linear-gradient(180deg,#07111d_0%,#081323_100%)]" />
-        <div className="relative mx-auto max-w-7xl">
-          <SectionHeading
-            eyebrow="Free portfolio review"
-            title="High-conversion lead capture, built to feel premium instead of pushy."
-            description="The form is intentionally structured for future CRM, email, and backend integrations while already supporting WhatsApp and email handoff flows."
-            invert
-          />
-          <div className="mt-12">
-            <PortfolioReviewForm />
           </div>
         </div>
       </section>
@@ -370,23 +296,8 @@ export default function Home() {
             <ContactGrid />
           </div>
 
-          <div className="mt-14 grid gap-5 lg:grid-cols-4">
-            {advisoryProcess.map((step, index) => (
-              <ScrollReveal key={step.title} delay={index * 0.05}>
-                <article className="rounded-[28px] border border-slate-200/70 bg-slate-50/80 p-6 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
-                  <step.icon className="h-5 w-5 text-sky-700" />
-                  <h3 className="mt-4 text-xl font-semibold text-slate-950">
-                    {step.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">
-                    {step.description}
-                  </p>
-                </article>
-              </ScrollReveal>
-            ))}
-          </div>
               {/* Sumit Asalkar */}
-          <div className="mt-12 flex flex-col gap-4 rounded-[32px] border border-slate-200/70 bg-slate-950 p-6 text-white shadow-[0_25px_80px_rgba(2,6,23,0.28)] md:flex-row md:items-center md:justify-between">
+          <div className="mt-12 flex flex-col gap-4 rounded-[32px] border border-emerald-800 bg-emerald-950 p-6 text-white shadow-[0_25px_80px_rgba(6,78,59,0.22)] md:flex-row md:items-center md:justify-between">
             <div>
               <p className="text-xs uppercase tracking-[0.24em] text-sky-100/70">
                 Final CTA

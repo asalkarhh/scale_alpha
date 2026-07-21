@@ -48,7 +48,7 @@ export default function OpenGraphImage() {
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <span style={{ fontSize: 18, letterSpacing: 6, opacity: 0.7 }}>
-              PREMIUM ADVISORY
+              AMFI-REGISTERED DISTRIBUTOR
             </span>
             <span style={{ fontSize: 38, fontWeight: 700 }}>Scale Alpha</span>
           </div>
@@ -58,7 +58,7 @@ export default function OpenGraphImage() {
             Smart Financial Planning for a Secure Future
           </div>
           <div style={{ fontSize: 28, lineHeight: 1.4, opacity: 0.82 }}>
-            Premium fintech-style wealth advisory frontend built for trust,
+            Premium fintech-style mutual fund distribution platform built for trust,
             conversions, calculators, and consultations.
           </div>
         </div>

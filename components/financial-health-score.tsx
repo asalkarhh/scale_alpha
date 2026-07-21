@@ -203,6 +203,10 @@ export function FinancialHealthScore() {
               A directional signal based on reserves, investing intensity, goal clarity,
               and insurance readiness.
             </p>
+            <p className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs leading-6 text-amber-900">
+              Results are illustrative and for educational purposes only. They do
+              not guarantee outcomes or constitute personalized advice.
+            </p>
           </div>
 
           <div>
@@ -255,7 +259,7 @@ export function FinancialHealthScore() {
             </div>
 
             <a
-              href="#portfolio-review"
+              href="/contact"
               className="mt-6 inline-flex rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition-transform duration-300 hover:-translate-y-0.5"
             >
               Get Personalized Financial Plan

@@ -317,6 +317,12 @@ export function CalculatorSuite({ compact = false }: CalculatorSuiteProps) {
             )}
           </div>
           <p className="mt-4 text-sm leading-7 text-slate-600">{result.footnote}</p>
+          {definition.key === "sip" || definition.key === "insurance" ? (
+            <p className="mt-3 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs leading-6 text-amber-900">
+              Results are illustrative and for educational purposes only. They do
+              not guarantee outcomes or constitute personalized advice.
+            </p>
+          ) : null}
         </div>
 
         <div className="mt-6 flex flex-col gap-3 rounded-[28px] border border-slate-200/70 bg-slate-50/80 p-5 sm:flex-row sm:items-center sm:justify-between">
@@ -325,12 +331,12 @@ export function CalculatorSuite({ compact = false }: CalculatorSuiteProps) {
               Want a personalized recommendation around this number?
             </p>
             <p className="mt-1 text-sm text-slate-600">
-              We can turn this estimate into a real advisory action plan with
+              We can turn this estimate into a real financial planning action plan with
               allocation, risk, and implementation guidance.
             </p>
           </div>
           <Link
-            href="/#portfolio-review"
+            href="/contact"
             className="inline-flex items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition-transform duration-300 hover:-translate-y-0.5"
           >
             Get a review

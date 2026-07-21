@@ -5,7 +5,7 @@ import { contactCards, siteConfig } from "@/lib/site-data";
 
 export function ContactGrid() {
   return (
-    <div className="grid gap-6 xl:grid-cols-[0.9fr_1.1fr]">
+    <div className="mx-auto max-w-4xl">
       <div className="grid gap-4">
         {contactCards.map((card) => (
           <article
@@ -58,7 +58,7 @@ export function ContactGrid() {
             <div>
               <Phone className="h-5 w-5 text-sky-700" />
               <p className="mt-3 text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
-                Advisory line
+                Planning line
               </p>
               <p className="mt-2 text-base font-semibold text-slate-950">
                 +91 {siteConfig.whatsappNumber.slice(2, 7)} {siteConfig.whatsappNumber.slice(7)}
@@ -67,7 +67,7 @@ export function ContactGrid() {
             <div>
               <MapPin className="h-5 w-5 text-sky-700" />
               <p className="mt-3 text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
-                Office
+                Office Address
               </p>
               <p className="mt-2 text-base font-semibold text-slate-950">
                 {siteConfig.officeLabel}
@@ -80,15 +80,6 @@ export function ContactGrid() {
         </div>
       </div>
 
-      <div className="overflow-hidden rounded-[32px] border border-slate-200/70 bg-white shadow-[0_18px_60px_rgba(15,23,42,0.08)]">
-        <iframe
-          title="Scale Alpha office map"
-          src={siteConfig.mapEmbedUrl}
-          className="h-full min-h-[540px] w-full border-0"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
-      </div>
     </div>
   );
 }
