@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CheckCircle2 } from "lucide-react";
 
 import { PageHero } from "@/components/page-hero";
 import { ScrollReveal } from "@/components/scroll-reveal";
@@ -6,71 +7,112 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { whyChooseUs } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "About Kaushal Balte",
+  title: "About Scale Alpha & Kaushal Balte",
   description:
-    "Meet Kaushal Balte and learn how Scale Alpha approaches mutual fund distribution, insurance planning and goal-based financial planning in India.",
-  keywords: [
-    "Kaushal Balte",
-    "Scale Alpha",
-    "AMFI-registered mutual fund distributor",
-    "goal-based financial planning",
-  ],
+    "Learn about Kaushal Balte and Scale Alpha's goal-based financial planning and mutual fund distribution in India.",
   alternates: { canonical: "/about" },
-  openGraph: {
-    title: "About Kaushal Balte | Scale Alpha",
-    description:
-      "Learn about Kaushal Balte and Scale Alpha's approach to mutual fund distribution and financial planning.",
-    url: "/about",
-  },
 };
 
 export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About Scale Alpha"
-        title="A fintech-fluent distribution brand built to feel premium, clear, and trustworthy."
-        description="Led by Kaushal Balte, Scale Alpha helps modern investors approach mutual funds, financial planning, and protection decisions with clarity and purpose."
+        eyebrow="About Us"
+        title="About Scale Alpha"
+        description="Led by Kaushal Balte (AMFI ARN-269246), we help investors achieve clarity, discipline, and long-term financial security."
         primaryCta={{ label: "Contact Us", href: "/contact" }}
-        secondaryCta={{ label: "See Services", href: "/services" }}
+        secondaryCta={{ label: "Our Offerings", href: "/offerings" }}
       />
-      <section className="bg-white px-6 py-20">
+
+      <section className="bg-white px-4 py-8 sm:px-6 sm:py-12">
         <div className="mx-auto max-w-7xl">
-          <SectionHeading
-            eyebrow="Vision & mission"
-            title="Financial decisions built around clarity, confidence, and long-term purpose."
-            description="Scale Alpha exists to make thoughtful financial planning easier to understand and simpler to act on."
-          />
-          <div className="mt-12 grid gap-5 md:grid-cols-2">
-            <article className="rounded-[28px] border border-emerald-100 bg-emerald-50/60 p-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-700">Our vision</p>
-              <h2 className="mt-4 text-2xl font-semibold text-emerald-950">Help people build a secure financial future with confidence.</h2>
-              <p className="mt-4 leading-8 text-slate-600">To create a trusted financial guidance experience where every decision is clear, considered, and aligned with meaningful life goals.</p>
+          
+          {/* Founder Profile Card */}
+          <div className="rounded-2xl border border-emerald-100 bg-emerald-50/40 p-6 sm:p-8">
+            <div className="grid items-center gap-6 md:grid-cols-12">
+              <div className="md:col-span-8 space-y-2">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-700">
+                  Founder &amp; Principal Distributor
+                </span>
+                <h2 className="text-2xl font-bold text-emerald-950 sm:text-3xl">
+                  Kaushal Balte
+                </h2>
+                <p className="text-xs font-semibold text-emerald-800">
+                  AMFI-Registered Mutual Fund Distributor • ARN-269246
+                </p>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1">
+                  Dedicated to delivering transparent, goal-aligned financial planning for families, salaried professionals, and business owners across India.
+                </p>
+                
+                <div className="grid gap-2 pt-2 sm:grid-cols-2">
+                  <div className="flex items-center gap-2 text-xs text-slate-700">
+                    <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+                    <span>Unbiased, client-centric guidance</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-slate-700">
+                    <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+                    <span>Holistic goal &amp; tax mapping</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="md:col-span-4 flex flex-col gap-2">
+                <div className="rounded-xl border border-emerald-100 bg-white p-4 text-center">
+                  <p className="text-2xl font-bold text-emerald-950">100+</p>
+                  <p className="text-xs text-slate-500">Satisfied Clients</p>
+                </div>
+                <div className="rounded-xl border border-emerald-100 bg-white p-4 text-center">
+                  <p className="text-2xl font-bold text-emerald-950">₹5 Cr+</p>
+                  <p className="text-xs text-slate-500">AUM Advised</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Vision & Mission */}
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            <article className="rounded-2xl border border-emerald-100 bg-white p-5 shadow-xs">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-700">Our Vision</span>
+              <h3 className="mt-1 text-lg font-bold text-emerald-950">Financial Freedom for Every Family</h3>
+              <p className="mt-1 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                To empower investors with clear, goal-backed roadmaps that compound wealth and beat inflation.
+              </p>
             </article>
-            <article className="rounded-[28px] border border-emerald-100 bg-white p-8 shadow-[0_14px_40px_rgba(6,78,59,0.07)]">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-700">Our mission</p>
-              <h2 className="mt-4 text-2xl font-semibold text-emerald-950">Make quality financial planning accessible and personal.</h2>
-              <p className="mt-4 leading-8 text-slate-600">To simplify complex choices through transparent communication, suitable solutions, and consistent support at every stage of the journey.</p>
+            <article className="rounded-2xl border border-emerald-100 bg-white p-5 shadow-xs">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-700">Our Mission</span>
+              <h3 className="mt-1 text-lg font-bold text-emerald-950">Simple, Transparent Advisory</h3>
+              <p className="mt-1 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                To eliminate guesswork through transparent product selection, paperless execution, and periodic rebalancing.
+              </p>
             </article>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {whyChooseUs.map((item, index) => (
-              <ScrollReveal key={item.title} delay={index * 0.05}>
-                <article className="rounded-[28px] border border-slate-200/70 bg-slate-50/80 p-6 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
-                  <item.icon className="h-5 w-5 text-sky-700" />
-                  <h3 className="mt-4 text-xl font-semibold text-slate-950">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">
-                    {item.description}
-                  </p>
-                </article>
-              </ScrollReveal>
-            ))}
+
+          {/* Why Choose Us */}
+          <div className="mt-10">
+            <SectionHeading
+              eyebrow="Values"
+              title="Why Choose Scale Alpha"
+              description="Built on compliance, transparency, and client-first commitment."
+              align="center"
+            />
+            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {whyChooseUs.map((item, index) => (
+                <ScrollReveal key={item.title} delay={index * 0.04}>
+                  <article className="h-full rounded-2xl border border-emerald-100 bg-white p-5 shadow-xs transition-all hover:border-emerald-300">
+                    <item.icon className="h-5 w-5 text-emerald-700" />
+                    <h3 className="mt-2 text-base font-bold text-emerald-950">
+                      {item.title}
+                    </h3>
+                    <p className="mt-1 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </article>
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
     </>
   );
 }
-

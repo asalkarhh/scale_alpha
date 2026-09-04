@@ -17,7 +17,10 @@ export function PageHero({
   secondaryCta,
 }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden px-6 pb-16 pt-14 sm:pt-20">
+    <section
+      data-header-theme="dark"
+      className="relative overflow-hidden px-6 pb-16 pt-14 sm:pt-20"
+    >
       <div className="absolute inset-x-0 top-0 h-full bg-[radial-gradient(circle_at_top,rgba(53,196,255,0.18),transparent_38%),radial-gradient(circle_at_80%_20%,rgba(77,212,163,0.14),transparent_26%),linear-gradient(180deg,#06101e_0%,#081323_62%,#0c1626_100%)]" />
       <div className="relative mx-auto max-w-5xl">
         <ScrollReveal className="rounded-[36px] border border-white/10 bg-white/6 p-8 shadow-[0_25px_100px_rgba(2,6,23,0.35)] backdrop-blur-2xl sm:p-12">

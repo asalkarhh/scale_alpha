@@ -1,50 +1,83 @@
 import type { Metadata } from "next";
 
+import { AdvisoryProcess } from "@/components/advisory-process";
+import { ClientServicesGrid } from "@/components/client-services-grid";
 import { PageHero } from "@/components/page-hero";
+import { ProductBasketGrid } from "@/components/product-basket-grid";
 import { ServicesGrid } from "@/components/services-grid";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 export const metadata: Metadata = {
-  title: "Mutual Fund, SIP & Insurance Services",
+  title: "Offerings & Services | Mutual Funds, NPS, PMS & Protection",
   description:
-    "Explore mutual fund distribution, SIP planning, insurance, retirement planning and tax-saving investment services from Scale Alpha and Kaushal Balte.",
-  keywords: [
-    "Scale Alpha services",
-    "Kaushal Balte mutual fund distributor",
-    "mutual fund distribution services",
-    "SIP planning",
-    "insurance planning",
-    "retirement planning",
-    "tax-saving investments",
-  ],
+    "Explore Scale Alpha's comprehensive product basket and client services: Mutual Funds, Equities, NPS, PMS, LAMF, and Insurance.",
   alternates: { canonical: "/services" },
-  openGraph: {
-    title: "Mutual Fund, SIP & Insurance Services | Scale Alpha",
-    description:
-      "Goal-based mutual fund distribution, SIP, insurance, retirement and tax-saving investment services.",
-    url: "/services",
-  },
 };
 
 export default function ServicesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Services"
-        title="Distribution and planning services positioned like a premium wealth platform."
-        description="Scale Alpha's service architecture is built around goal-based planning, risk-managed investing, protection strategy, and long-term wealth decisions."
+        eyebrow="Solutions"
+        title="Services &amp; Offerings"
+        description="Goal-based mutual fund investments, retirement planning, liquidity, and insurance distribution."
         primaryCta={{ label: "Contact Us", href: "/contact" }}
-        secondaryCta={{ label: "Explore Calculators", href: "/calculators" }}
+        secondaryCta={{ label: "Calculators", href: "/calculators" }}
       />
 
-      <section className="bg-white px-6 py-20">
+      {/* 3-Step Advisory Workflow */}
+      <section className="bg-slate-50 px-4 py-8 sm:px-6 sm:py-12" id="workflow">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
-            eyebrow="Planning verticals"
-            title="Focused services for every stage of your financial journey."
-            description="Explore goal-based investing, retirement planning, protection planning, tax-saving investments, and long-term wealth planning."
+            eyebrow="Process"
+            title="Our 3-Step Workflow"
+            description="Plan with clarity, execute seamlessly, and manage risk through regular rebalancing."
+            align="center"
           />
-          <div className="mt-12">
+          <div className="mt-6">
+            <AdvisoryProcess />
+          </div>
+        </div>
+      </section>
+
+      {/* Product Basket */}
+      <section className="bg-white px-4 py-8 sm:px-6 sm:py-12" id="product-basket">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading
+            eyebrow="Offerings"
+            title="Our Product Basket"
+            description="Curated suite of investment, liquidity, and protection solutions."
+          />
+          <div className="mt-6">
+            <ProductBasketGrid />
+          </div>
+        </div>
+      </section>
+
+      {/* Client Services & Platforms */}
+      <section className="bg-emerald-50/25 border-y border-emerald-100 px-4 py-8 sm:px-6 sm:py-12" id="client-services">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading
+            eyebrow="Platforms"
+            title="Client Services &amp; Digital Portals"
+            description="Consolidated wealth reporting, digital E-Wealth accounts, and smart rebalancing."
+            align="center"
+          />
+          <div className="mt-6">
+            <ClientServicesGrid />
+          </div>
+        </div>
+      </section>
+
+      {/* Detailed Service Verticals */}
+      <section className="bg-white px-4 py-8 sm:px-6 sm:py-12" id="verticals">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading
+            eyebrow="Planning Verticals"
+            title="Goal Planning For Every Life Stage"
+            description="Goal-based investing, retirement planning, insurance cover, and tax optimization."
+          />
+          <div className="mt-6">
             <ServicesGrid detailed />
           </div>
         </div>
@@ -52,4 +85,3 @@ export default function ServicesPage() {
     </>
   );
 }
-

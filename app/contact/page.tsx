@@ -3,24 +3,13 @@ import type { Metadata } from "next";
 import { ContactGrid } from "@/components/contact-grid";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { siteConfig } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Contact Kaushal Balte",
+  title: "Contact Kaushal Balte | Scale Alpha",
   description:
-    "Contact Kaushal Balte at Scale Alpha for mutual fund distribution, SIP planning, insurance and financial planning discussions in India.",
-  keywords: [
-    "contact Scale Alpha",
-    "contact Kaushal Balte",
-    "mutual fund distributor contact",
-    "SIP planning consultation",
-  ],
+    "Connect with Kaushal Balte at Scale Alpha for mutual fund distribution, SIP planning, insurance, and portfolio reviews.",
   alternates: { canonical: "/contact" },
-  openGraph: {
-    title: "Contact Kaushal Balte | Scale Alpha",
-    description:
-      "Connect with Scale Alpha for mutual fund distribution, SIP, insurance and financial planning discussions.",
-    url: "/contact",
-  },
 };
 
 export default function ContactPage() {
@@ -28,20 +17,20 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Reach Scale Alpha through the channel that feels most natural."
-        description="WhatsApp and email details are structured here for frictionless contact and fast follow-up."
-        primaryCta={{ label: "Open WhatsApp", href: "/#contact" }}
-        secondaryCta={{ label: "Go to Home", href: "/" }}
+        title="Get In Touch"
+        description="Connect with Kaushal Balte for a 1-on-1 consultation, portfolio review, or investment query."
+        primaryCta={{ label: "Chat on WhatsApp", href: `https://wa.me/${siteConfig.whatsappNumber}` }}
+        secondaryCta={{ label: "Back to Home", href: "/" }}
       />
 
-      <section className="bg-white px-6 py-20">
+      <section className="bg-white px-4 py-8 sm:px-6 sm:py-12">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
-            eyebrow="Connect"
-            title="A modern contact experience built around financial planning conversations."
-            description="This section is ready to support CRM mapping, calendar integrations, and future backend submission handling."
+            eyebrow="Consultation & Direct Desk"
+            title="Reach Scale Alpha"
+            description="Submit your investment goals below for custom recommendations, or connect directly via WhatsApp, phone, and email."
           />
-          <div className="mt-12">
+          <div className="mt-6">
             <ContactGrid />
           </div>
         </div>
@@ -49,4 +38,3 @@ export default function ContactPage() {
     </>
   );
 }
-

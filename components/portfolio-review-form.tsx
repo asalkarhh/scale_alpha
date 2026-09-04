@@ -143,10 +143,11 @@ export function PortfolioReviewForm() {
               required
               type="email"
               name="email"
+              autoComplete="off"
               value={form.email}
               onChange={updateField}
               className="w-full rounded-2xl border border-slate-200 bg-slate-50/80 px-4 py-3 outline-none transition-colors focus:border-sky-300"
-              placeholder="name@example.com"
+              placeholder="name@domain.com"
             />
           </label>
           <label className="space-y-2 text-sm font-medium text-slate-700">
