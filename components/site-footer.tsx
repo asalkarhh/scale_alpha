@@ -175,9 +175,8 @@ export function SiteFooter() {
           id="footer-bottom-bar"
           className="mt-8 border-t border-white/10 pt-6 text-xs text-slate-500"
         >
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p>© {new Date().getFullYear()} Scale Alpha. All rights reserved.</p>
-            <div className="flex flex-wrap items-center gap-4">
+          <div className="grid gap-3 text-center sm:grid-cols-3 sm:items-center">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:justify-start">
               {siteConfig.socialLinks.map((item) => (
                 <Link
                   key={item.label}
@@ -191,6 +190,18 @@ export function SiteFooter() {
                 </Link>
               ))}
             </div>
+            <p>© 2026 Scale Alpha. All rights reserved.</p>
+            <p className="sm:text-right">
+              Developed by{" "}
+              <a
+                href="https://www.asalkar.in/"
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors hover:text-white"
+              >
+                Asalkar Techworks
+              </a>
+            </p>
           </div>
         </div>
       </div>
